@@ -212,6 +212,7 @@ The car gives you a simple interface.
 ```python
 from abc import ABC, abstractmethod
 
+
 class Machine(ABC):
     @abstractmethod
     def run(self):
@@ -231,16 +232,11 @@ class WashingMachine(Machine):
 Usage:
 
 ```python
-car = Car()
-car.start()
-car.accelerate()
-car.brake()
-```
+coffee = CoffeeMaker()
+coffee.run()
 
-The outside code only needs to know:
-
-```python
-car.start()
+laundry = WashingMachine()
+laundry.run()
 ```
 
 It does not need to know every internal step required to start the engine.
