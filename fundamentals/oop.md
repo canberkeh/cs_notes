@@ -200,8 +200,8 @@ How do I keep an object's data valid and organized?
 
 ## Abstraction
 
-Abstraction means exposing the important actions while hiding the complicated
-internal details.
+Abstraction means defining what an object does without exposing how it does it.
+
 
 Real-world example: when you drive a car, you use the steering wheel, brake
 pedal, gas pedal, and gear selector. You do not manually control fuel injection,
@@ -210,27 +210,22 @@ engine timing, brake pressure distribution, or cooling.
 The car gives you a simple interface.
 
 ```python
-class Car:
-    def start(self):
-        self._check_engine()
-        self._inject_fuel()
-        self._ignite()
-        print("Car started")
+from abc import ABC, abstractmethod
 
-    def accelerate(self):
-        print("Car is moving faster")
+class Machine(ABC):
+    @abstractmethod
+    def run(self):
+        pass
 
-    def brake(self):
-        print("Car is slowing down")
 
-    def _check_engine(self):
-        print("Checking engine")
+class CoffeeMaker(Machine):
+    def run(self):
+        print("Coffee is being prepared...")
 
-    def _inject_fuel(self):
-        print("Injecting fuel")
 
-    def _ignite(self):
-        print("Igniting engine")
+class WashingMachine(Machine):
+    def run(self):
+        print("Laundry is being washed...")
 ```
 
 Usage:
