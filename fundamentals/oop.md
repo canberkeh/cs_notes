@@ -186,8 +186,8 @@ class BankAccount:
         return self._balance
 ```
 
-The underscore in `_balance` means "this is internal; do not change it
-directly."
+The underscore in _balance means "this is internal; do not change it directly."
+Using __balance (double underscore) makes it even harder to access from outside.
 
 Python does not strictly block access, but this convention tells other
 programmers to use the methods instead.
@@ -203,11 +203,11 @@ How do I keep an object's data valid and organized?
 Abstraction means defining what an object does without exposing how it does it.
 
 
-Real-world example: when you drive a car, you use the steering wheel, brake
-pedal, gas pedal, and gear selector. You do not manually control fuel injection,
-engine timing, brake pressure distribution, or cooling.
+Real-world example: when you press a button on a coffee maker, you do not manually
+grind the beans, heat the water, or control the brewing time.
+The machine gives you a simple interface: one button, one result.
 
-The car gives you a simple interface.
+In Python, we use abstract classes to enforce this idea in code.
 
 ```python
 from abc import ABC, abstractmethod
@@ -273,7 +273,7 @@ Now create a manager:
 ```python
 class Manager(Employee):
     def __init__(self, name, salary, department):
-        super().__init__(name, salary)
+        super().__init__(name, salary)  # calls Employee's __init__, avoids repeating code
         self.department = department
 
     def describe(self):
