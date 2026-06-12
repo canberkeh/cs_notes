@@ -77,7 +77,7 @@ The system still operates. ✅
 In a real distributed system, partition tolerance is not optional. Network
 failures will happen. You must design for them.
 
-![alt text](cap-theorem.jpeg)
+![alt text](assets/cap-theorem.jpeg)
 
 
 ## The Core Trade-Off
