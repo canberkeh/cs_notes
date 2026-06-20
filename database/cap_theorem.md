@@ -49,6 +49,7 @@ Read from Node B → must return $10, not an old value.
 This is not the same as Consistency in ACID. In CAP, consistency means
 "all nodes see the same data at the same time."
 
+FOR CP --> "I don't know whether my data is up to date, so I won't respond."
 
 ## A Is for Availability
 
@@ -63,6 +64,7 @@ Node A still responds. ✅
 The response might not be the most up-to-date data, but the system does not
 refuse the request.
 
+For AP --> "I can't guarantee consistency, but I still return a response."
 
 ## P Is for Partition Tolerance
 
